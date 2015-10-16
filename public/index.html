@@ -1,0 +1,42 @@
+<html><head>
+
+  <link rel="stylesheet" href="/style.css"></link>
+
+  <body>
+    <div class="topper">
+      <h1>Lunch Room</h1>
+      <h2>Get the inside scoop on the  best line times</h2>
+    </div>
+    <div class="main">
+      
+      <div class = "well">
+        <h2>What was your wait like?</h2>
+        <form id="waitform" action="submitresponse" method="post">
+          <label for="time">Time</label>
+          <input type="range" id="time" min=690 max=750 value=720 name="timeminutes"></input>
+          <label for="time" id="timedisplay">12:00</label>
+          <br>
+          <label for="wait">Wait</label>
+          <input type="range" min=0 max=100 value=50 id="wait" name="wait"></input>
+          <label for="wait" id="waitdisplay">normal wait</label>
+          <br>
+          <input type="submit" id="submit" value="Submit"></input>
+        </form>
+      </div>
+      
+      <div class="well">
+        <h2>Today's Menu:</h2>
+        <p>(coming soon)</p>
+      </div> 
+      
+      <div class="well">
+        <h2>Today's Prediction</h2>
+        <canvas id="mychart" width="800" height="400"></canvas>
+      </div>
+      
+    </div>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src = "app.js"></script>
+  </body>
+</html>
