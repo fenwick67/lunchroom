@@ -71,7 +71,7 @@ function throttleSubmissions(req,res,next){
 
 app.use(serveStatic('public'));
 
-app.listen(process.env.port || 8000,function(){
-  console.log('listening on port '+(process.env.port || 8000));
+app.listen(process.env.PORT || process.env.port || 8000,function(){
+  console.log('listening on port '+(process.env.PORT || process.env.port || 8000));
   
 });
