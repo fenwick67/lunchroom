@@ -110,3 +110,43 @@ label{
 #timedisplay,#waitdisplay{
   width:6em;
 }
+#popup{
+  top:0;
+  left:50%; 
+  top:50%;
+  width:200px;
+  height:200px;
+  position:absolute;
+  margin-left:-100px;
+  margin-top:-100px;
+  padding:1em;
+  display:none;
+  background-color:white;
+  box-shadow:0 0 100px 5px rgba(0,0,0,.3);
+}
+#popup.show{ 
+  display:block;
+}
+#popup:after{
+height:20px;
+width:20px;
+line-height:20px;
+color:rgba(255,0,0,.5);
+border:solid 1px currentcolor;
+background-color:white;
+font-weight:bold;
+content:"\2716";
+display:block;
+position:absolute;
+top:0;
+right:0;
+}
+#dailymenu div{
+  margin:0;
+  padding:0;
+}#dailymenu>div>div{
+  display:inline-block;
+}
+#dailymenu>div>div:first-child{
+  display:block;
+}

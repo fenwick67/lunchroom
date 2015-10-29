@@ -58,7 +58,10 @@ $('#waitform').on('submit',function(e){
   
   $.ajax({
     method:method,
-    url:url    
+    url:url,
+    error:function(e){
+      showPopup('Failed to send response.  Try again later.  Note: only one response is permitted per day.');
+    }
   });
   
   console.log(url);
@@ -70,7 +73,15 @@ $.ajax({
   url:'/waitTimes.json',
   method:'get',
   success:updateChart,
-  fail:ajaxFail  
+  error:ajaxFail
+});
+
+$.ajax({
+  url:'/dailymenu',
+  method:'get',
+  success:function(data){
+   $('#dailymenu').html(data); 
+  }
 });
 
 function updateChart(data){
@@ -172,8 +183,11 @@ function updateChart(data){
 
 function ajaxFail(){
   console.log('ajax failed');
+  showPopup('Failed to get prediction data.  Try again later.');
 }
 
+
+$('#popup').on('click',removePopup);
 
 });
 
@@ -189,4 +203,16 @@ function timeToText(time){
     minutes = '0' + minutes;
   }
   return hours + ':' + minutes;
+}
+
+function showPopup(inner){
+  $('#popup')
+  .addClass('show')
+  .html(inner);  
+}
+
+function removePopup(){
+  $('#popup')
+  .removeClass('show')
+  .html('');
 }

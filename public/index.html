@@ -7,7 +7,14 @@
       <h1>Lunch Room</h1>
       <h2>Get the inside scoop on the  best line times</h2>
     </div>
-    <div class="main">
+    <div class="main">     
+    
+      <div class="well">
+        <h2>Today's Prediction</h2>
+        <div id = "chartcontainer">
+          <canvas id="mychart" width="800" height="400"></canvas>
+        </div>
+      </div>
       
       <div class = "demiwell">
         <h2>What was your wait like?</h2>
@@ -24,19 +31,15 @@
         </form>
       </div>
       
-      <div class="demiwell">
-        <h2>Today's Menu:</h2>
-        <p>(is coming soon)</p>
-      </div> 
-      <br>
       <div class="well">
-        <h2>Today's Prediction</h2>
-        <div id = "chartcontainer">
-          <canvas id="mychart" width="800" height="400"></canvas>
+        <h2>Today's Menu:</h2>
+        <div id="dailymenu">
+          <p>(is coming soon)</p>
         </div>
-      </div>
+      </div>      
       
     </div>
+    <div id="popup" class="well"></div>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src = "https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src = "app.js"></script>
